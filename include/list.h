@@ -5,7 +5,7 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Wed Feb 10 16:45:31 2016 Voyevoda
-** Last update Fri Feb 12 14:57:14 2016 Voyevoda
+** Last update Mon Feb 15 15:06:59 2016 Voyevoda
 */
 
 #ifndef LIST_H_
@@ -13,11 +13,12 @@
 
 struct l_list
 {
-  int	L1;
-  int	L2;
-  int	L3;
-  int	L4;
+  int	*v_line;
   int	line;
+  int	flag_line;
+  int	flag_match;
+  int	flag_ia;
+  int	game_over;
 };
 typedef struct l_list t_list;
 
