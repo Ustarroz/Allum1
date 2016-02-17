@@ -5,7 +5,7 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Wed Feb 10 14:50:12 2016 Voyevoda
-** Last update Mon Feb 15 16:51:22 2016 Voyevoda
+** Last update Wed Feb 17 20:28:46 2016 Voyevoda
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,25 +22,26 @@ int	ai_turn(t_list *alphabet, int *alum)
 {
   int	line;
   int	matches;
-  if (alphabet->flag_ia == 0)
+
+  my_putchar('a');
+  while (alum[my_rand(3)] < 0)
     {
-      while (alum[my_rand(3)] < 0)
+      line = alum[my_rand(3)];
+      if (alum[my_rand(3)] > 0)
 	{
-	  line = alum[my_rand(3)];
-	  if (alum[my_rand(3)] > 0)
-	    {
-	      matches = my_rand(alum[line]);
-	      alum[line] = alum[line] - matches;
-	    }
-	  my_putstr("Player removed ");
-	  my_put_nbr(matches);
-	  my_putstr(" match(es) from line ");
-	  my_put_nbr(line + 1);
-	  my_putchar('\n');
-	  print_game_board(alum, alphabet);
+	  matches = my_rand(alum[line]);
+	  alum[line] = alum[line] - matches;
 	}
+      my_putstr("IA removed ");
+      my_put_nbr(matches);
+      my_putstr(" match(es) from line ");
+      my_put_nbr(line + 1);
+      my_putchar('\n');
+      print_game_board(alum, alphabet);
+      alphabet->flag_line = 0;
+      my_putchar('\n');
+      my_putstr("Your turn:\nLine : ");
     }
-  alphabet->flag_ia = 1;
   alphabet->flag_line = 0;
   return (0);
 }
@@ -65,20 +66,20 @@ int		player_turn_match(char *s, t_list *alphabet, int *alum)
       if ((j = player_turn_match_error) == 1)
 	return (1);
       k = my_getnbr(s);
-      if (k < alum[alphabet->line + 1])
+      if (k <= alum[alphabet->line])
 	{
 	  alum[alphabet->line] = alum[alphabet->line] - k;
-	  alphabet->line = 0;
 	  my_putstr("Player removed ");
 	  my_put_nbr(k);
 	  my_putstr(" match(es) from line ");
 	  my_put_nbr(alphabet->line + 1);
 	  my_putchar('\n');
+	  alphabet->line = 0;
 	  print_game_board(alum, alphabet);
+	  ai_turn(alphabet, alum);
 	}
     }
   alphabet->flag_match++;
-  /* alphabet->flag_ia = 0; */
   return (0);
 }
 
@@ -89,16 +90,17 @@ int		player_turn_line(char *s, t_list *alphabet)
   if (alphabet->flag_line == 0)
     {
       k = my_getnbr(s);
-      if (k < 0 || k > 4)
+      if (k < 0 || k > 5)
 	my_putstr("error impossible number");
       else
 	{
-	  alphabet->line = k - 1;
+	  k = k - 1;
+	  printf("%d", k);
+	  alphabet->line = k;
 	  my_putstr("Matches: ");
 	}
-      alphabet->flag_line = 1;
-      /* alphabet->flag_match = 0; */
     }
+  alphabet->flag_line++;
   return (0);
 }
 
@@ -117,7 +119,6 @@ int		main(int ac, char **av)
     {
       player_turn_line(s, alphabet);
       player_turn_match(s, alphabet, alum);
-      ai_turn(alphabet, alum);
       free(s);
     }
   return (0);
