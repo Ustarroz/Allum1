@@ -5,7 +5,7 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Wed Feb 10 14:50:12 2016 Voyevoda
-** Last update Sat Feb 20 20:52:12 2016 Voyevoda
+** Last update Sat Feb 20 21:11:31 2016 Voyevoda
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -130,7 +130,9 @@ int		main(int ac, char **av)
 
   (void) ac;
   (void) av;
-  alum = malloc_alum(alum, alphabet);
+  alum = NULL;
+  alphabet = NULL;
+  malloc_alum(alum, alphabet);
   my_putchar('\n');
   my_putstr("Your turn:\nLine : ");
   while ((s = get_next_line(0)))

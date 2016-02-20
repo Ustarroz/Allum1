@@ -5,7 +5,7 @@
 ## Login   <robin@epitech.net>
 ## 
 ## Started on  Mon Dec 14 14:30:17 2015 robin
-## Last update Sat Feb 20 17:22:49 2016 Voyevoda
+## Last update Sat Feb 20 21:13:04 2016 Voyevoda
 ##
 
 CC	=	gcc
@@ -17,7 +17,7 @@ SRC	=	main.c			\
 		my_put_nbr.c		\
 		fct.c
 
-CFLAGS	=	-Wall -Wextra -W -ansi -pedantic
+CFLAGS	=	 -Wall -Wextra -W -ansi -pedantic -Werror
 
 RM	=	rm -f
 
