@@ -5,13 +5,17 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Wed Feb 10 15:09:19 2016 Voyevoda
-** Last update Sat Feb 13 16:02:50 2016 Voyevoda
+** Last update Sat Feb 20 19:46:22 2016 Voyevoda
 */
 
 #ifndef FCT_H_
 #define FCT_H_
 #include "./list.h"
 
+int	check_number(char *str);
+int	player_turn_line_error(int k, int *alum);
+int	game_over(int *alum, int flag);
+int	my_rand(int b, int a);
 void	my_putchar(char c);
 void	my_putstr(char *str);
 void	print_game_board(int *alum1, t_list *alphabet);

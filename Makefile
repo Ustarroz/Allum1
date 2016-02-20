@@ -5,7 +5,7 @@
 ## Login   <robin@epitech.net>
 ## 
 ## Started on  Mon Dec 14 14:30:17 2015 robin
-## Last update Fri Feb 12 14:56:43 2016 Voyevoda
+## Last update Sat Feb 20 17:22:49 2016 Voyevoda
 ##
 
 CC	=	gcc
@@ -14,7 +14,8 @@ SRC	=	main.c			\
 		print_game_board.c	\
 		get_next_line.c		\
 		my_getnumbr.c		\
-		my_put_nbr.c
+		my_put_nbr.c		\
+		fct.c
 
 CFLAGS	=	-Wall -Wextra -W -ansi -pedantic
 

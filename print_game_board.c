@@ -5,17 +5,12 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Wed Feb 10 12:04:49 2016 Voyevoda
-** Last update Wed Feb 17 20:18:57 2016 Voyevoda
+** Last update Sat Feb 20 20:52:10 2016 Voyevoda
 */
 #include <stdlib.h>
 #include <unistd.h>
 #include "./include/list.h"
 #include "./include/fct.h"
-
-void	my_putchar(char c)
-{
-  write(1, &c, 1);
-}
 
 void	my_putstr(char *str)
 {
