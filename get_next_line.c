@@ -5,7 +5,7 @@
 ** Login   <robin@epitech.net>
 **
 ** Started on  Mon Jan  4 15:11:24 2016 robin
-** Last update Sun Feb 21 14:08:52 2016 Voyevoda
+** Last update Sun Feb 21 20:47:49 2016 Voyevoda
 */
 
 #include "./include/get_next_line.h"
@@ -50,17 +50,17 @@ int		fill_stock(char *buffer, char *stock)
   static int	k = 0;
 
   j = 0;
-  while (buffer[j] != '\0' && buffer[j] != '\n')
+  while (buffer[j] != '\0')
     {
-      stock[k] = buffer[j];
-      j++;
-      k++;
       if (buffer[j] == '\n')
 	{
 	  stock[k] = '\0';
 	  k = 0;
 	  return (1);
 	}
+      stock[k] = buffer[j];
+      j++;
+      k++;
     }
   stock[k] = '\0';
   return (0);
@@ -115,5 +115,5 @@ char		*get_next_line(const int fd)
       buffer[j] = '\0';
       stock = my_realloc(buffer, stock);
     }
-  return (stock);
+  return ((j == 0 && stock[0] == '\0') ? NULL : stock);
 }
