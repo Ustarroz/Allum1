@@ -5,18 +5,20 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Sat Feb 20 17:08:30 2016 Voyevoda
-** Last update Sun Feb 21 14:15:56 2016 Voyevoda
+** Last update Sun Feb 21 17:45:33 2016 Voyevoda
 */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include "./include/list.h"
 #include "./include/fct.h"
+#include <time.h>
 
 int	my_rand(int b, int a)
 {
   if (b == a)
     return (a);
+  srand(time(NULL));
   return (rand() % (b - a) + a);
 }
 
