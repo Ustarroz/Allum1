@@ -5,7 +5,7 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Wed Feb 10 15:09:19 2016 Voyevoda
-** Last update Sat Feb 20 19:46:22 2016 Voyevoda
+** Last update Sun Feb 21 13:39:47 2016 Voyevoda
 */
 
 #ifndef FCT_H_
@@ -23,5 +23,6 @@ int	def_board(char **alum1);
 int	*malloc_alum();
 int	my_getnbr(char *str);
 int	my_put_nbr(int nb);
+t_list	*malloc_alphabet(int *alum);
 
 #endif /*FCT_H_*/

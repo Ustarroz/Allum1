@@ -5,7 +5,7 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Wed Feb 10 14:50:12 2016 Voyevoda
-** Last update Sat Feb 20 21:11:31 2016 Voyevoda
+** Last update Sun Feb 21 14:21:24 2016 Voyevoda
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,10 +31,10 @@ int	ai_turn(t_list *alphabet, int *alum)
 	my_putchar('\n');
 	print_game_board(alum, alphabet);
 	alphabet->flag_line = 0;
-	my_putstr("\n\nYour turn:\nLine : ");
-	matches = -1;
 	if (game_over(alum, 0) == 1)
 	  return (1);
+	my_putstr("\n\nYour turn:\nLine : ");
+	matches = -1;
       }
   alphabet->flag_match = 0;
   alphabet->flag_line = 0;
@@ -46,23 +46,23 @@ int	player_turn_match_error(char *s, t_list *alphabet, int *alum)
   int	k;
 
   k = (check_number(s) == -1) ? -1 : my_getnbr(s);
-  if (k > alum[alphabet->line] || k == 0)
+  if (k > alum[alphabet->line])
     {
       my_putstr("Error: not enough matches on this line\nLine: ");
       alphabet->flag_line = 0;
       alphabet->flag_match = 1;
       return (1);
     }
-  if (k < 0 || (k < '0' && k > '9'))
+  if (k < 0)
     {
       my_putstr("Error: invalid input (positive number expected)\nLine: ");
       alphabet->flag_line = 0;
       alphabet->flag_match = 1;
       return (1);
     }
-  if (alum[k - 1] == 0)
+  if (k == 0)
     {
-      my_putstr("Error: this line is empty\nLine: ");
+      my_putstr("Error: you have to remove at least one match\nLine: ");
       alphabet->flag_line = 0;
       alphabet->flag_match = 1;
       return (1);
@@ -72,12 +72,11 @@ int	player_turn_match_error(char *s, t_list *alphabet, int *alum)
 
 int		player_turn_match(char *s, t_list *alphabet, int *alum)
 {
-  int		j;
   int		k;
 
   if (alphabet->flag_match == 2)
     {
-      if ((j = player_turn_match_error(s, alphabet, alum)) == 1)
+      if (player_turn_match_error(s, alphabet, alum) == 1)
 	return (2);
       k = my_getnbr(s);
       if (k <= alum[alphabet->line])
@@ -110,9 +109,9 @@ int		player_turn_line(int *alum, char *s, t_list *alphabet)
       else
 	k = my_getnbr(s);
       if (player_turn_line_error(k, alum) == 1)
-	{
-	  alphabet->flag_match--;
-	  return (1);
+      	{
+      	  alphabet->flag_match--;
+      	  return (1);
 	}
       k = k - 1;
       alphabet->line = k;
@@ -130,11 +129,10 @@ int		main(int ac, char **av)
 
   (void) ac;
   (void) av;
-  alum = NULL;
-  alphabet = NULL;
-  malloc_alum(alum, alphabet);
+  alum = malloc_alum();
+  alphabet = malloc_alphabet(alum);
   my_putchar('\n');
-  my_putstr("Your turn:\nLine : ");
+  my_putstr("\nYour turn:\nLine : ");
   while ((s = get_next_line(0)))
     {
       player_turn_line(alum, s, alphabet);

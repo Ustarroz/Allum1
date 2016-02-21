@@ -5,7 +5,7 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Sat Feb 20 17:08:30 2016 Voyevoda
-** Last update Sat Feb 20 19:52:01 2016 Voyevoda
+** Last update Sun Feb 21 14:15:56 2016 Voyevoda
 */
 
 #include <stdlib.h>
@@ -29,15 +29,15 @@ int	game_over(int *alum, int flag)
 {
   int	total;
 
-  total =alum[0] + alum[1] + alum[2] + alum[3];
+  total = alum[0] + alum[1] + alum[2] + alum[3];
   if (total == 0 && flag == 0)
     {
-      my_putstr("I lost.. snif.. bul I'll get you next time!!\n");
+      my_putstr("\nI lost.. snif.. bul I'll get you next time!!\n");
       return (1);
     }
   if (total == 0 && flag == 1)
     {
-      my_putstr("You lost, too bad..\n");
+      my_putstr("\nYou lost, too bad..\n");
 	return (1);
     }
   return (0);
@@ -74,5 +74,7 @@ int	check_number(char *str)
 	return (- 1);
       i++;
     }
+  if (i == 0)
+    return (- 1);
   return (0);
 }

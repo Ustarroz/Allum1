@@ -5,7 +5,7 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Wed Feb 10 12:04:49 2016 Voyevoda
-** Last update Sat Feb 20 20:52:10 2016 Voyevoda
+** Last update Sun Feb 21 13:33:49 2016 Voyevoda
 */
 #include <stdlib.h>
 #include <unistd.h>
@@ -91,22 +91,14 @@ void	print_game_board(int *alum1, t_list *alphabet)
   print_stars();
 }
 
-int	*malloc_alum(int *alum1, t_list *alphabet)
+int	*malloc_alum()
 {
+  int	*alum1;
+
   alum1 = malloc(sizeof(int*) * (4));
   alum1[0] = 1;
   alum1[1] = 3;
   alum1[2] = 5;
   alum1[3] = 7;
-  alphabet->v_line = malloc(sizeof(int*) * (4));
-  alphabet->v_line[0] = 1;
-  alphabet->v_line[1] = 3;
-  alphabet->v_line[2] = 5;
-  alphabet->v_line[3] = 7;
-  alphabet->flag_line = 0;
-  alphabet->flag_match = 1;
-  alphabet->flag_ia = 1;
-  alphabet->game_over = 0;
-  print_game_board(alum1, alphabet);
   return (alum1);
 }

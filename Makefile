@@ -5,7 +5,7 @@
 ## Login   <robin@epitech.net>
 ## 
 ## Started on  Mon Dec 14 14:30:17 2015 robin
-## Last update Sat Feb 20 21:13:04 2016 Voyevoda
+## Last update Sun Feb 21 13:35:50 2016 Voyevoda
 ##
 
 CC	=	gcc
@@ -15,9 +15,10 @@ SRC	=	main.c			\
 		get_next_line.c		\
 		my_getnumbr.c		\
 		my_put_nbr.c		\
-		fct.c
+		fct.c			\
+		malloc.c
 
-CFLAGS	=	 -Wall -Wextra -W -ansi -pedantic -Werror
+CFLAGS	=	 -Wall -Wextra -W -ansi -pedantic 
 
 RM	=	rm -f
 
