@@ -5,7 +5,7 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Wed Feb 10 12:04:49 2016 Voyevoda
-** Last update Sun Feb 21 13:33:49 2016 Voyevoda
+** Last update Sun Feb 21 20:10:37 2016 Voyevoda
 */
 #include <stdlib.h>
 #include <unistd.h>
@@ -24,7 +24,7 @@ void	my_putstr(char *str)
     }
 }
 
-void print_stars()
+void	print_stars()
 {
   int	i;
 
