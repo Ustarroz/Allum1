@@ -5,7 +5,7 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Wed Feb 10 14:50:12 2016 Voyevoda
-** Last update Sun Feb 21 14:21:24 2016 Voyevoda
+** Last update Mon Feb 22 20:10:43 2016 Voyevoda
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -33,7 +33,7 @@ int	ai_turn(t_list *alphabet, int *alum)
 	alphabet->flag_line = 0;
 	if (game_over(alum, 0) == 1)
 	  return (1);
-	my_putstr("\n\nYour turn:\nLine : ");
+	my_putstr("\n\nYour turn:\nLine: ");
 	matches = -1;
       }
   alphabet->flag_match = 0;
@@ -132,7 +132,7 @@ int		main(int ac, char **av)
   alum = malloc_alum();
   alphabet = malloc_alphabet(alum);
   my_putchar('\n');
-  my_putstr("\nYour turn:\nLine : ");
+  my_putstr("\nYour turn:\nLine: ");
   while ((s = get_next_line(0)))
     {
       player_turn_line(alum, s, alphabet);
