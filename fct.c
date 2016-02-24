@@ -5,7 +5,7 @@
 ** Login   <voyevoda@epitech.net>
 **
 ** Started on  Sat Feb 20 17:08:30 2016 Voyevoda
-** Last update Sun Feb 21 17:45:33 2016 Voyevoda
+** Last update Wed Feb 24 18:54:26 2016 Voyevoda
 */
 
 #include <stdlib.h>
@@ -34,7 +34,7 @@ int	game_over(int *alum, int flag)
   total = alum[0] + alum[1] + alum[2] + alum[3];
   if (total == 0 && flag == 0)
     {
-      my_putstr("\nI lost.. snif.. bul I'll get you next time!!\n");
+      my_putstr("\nI lost.. snif.. but I'll get you next time!!\n");
       return (1);
     }
   if (total == 0 && flag == 1)
