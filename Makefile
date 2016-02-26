@@ -5,7 +5,7 @@
 ## Login   <robin@epitech.net>
 ## 
 ## Started on  Mon Dec 14 14:30:17 2015 robin
-## Last update Sun Feb 21 13:35:50 2016 Voyevoda
+## Last update Fri Feb 26 18:34:43 2016 Voyevoda
 ##
 
 CC	=	gcc
@@ -18,7 +18,7 @@ SRC	=	main.c			\
 		fct.c			\
 		malloc.c
 
-CFLAGS	=	 -Wall -Wextra -W -ansi -pedantic 
+CFLAGS	=	 -Wall -Wextra -W -ansi -pedantic -Werror
 
 RM	=	rm -f
 
